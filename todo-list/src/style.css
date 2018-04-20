@@ -5,12 +5,17 @@ body {
   font-family: sans-serif;
 }
 
-.todo-list .header input {
+.todo-form {
+  width: 50%;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+.todo-form input {
   padding: 10px;
   font-size: 16px;
   border: 2px solid #FFF;
 }
-.todo-list .header button {
+.todo-form button {
   padding: 10px;
   font-size: 16px;
   margin: 10px;
@@ -18,8 +23,25 @@ body {
   color: #FFF;
   border: 2px solid #0066FF;
 }
-.todo-list .header button:hover {
+.todo-form button:hover {
   background-color: #003399;
   border: 2px solid #003399;
   cursor: pointer;
+}
+
+.todo {
+  list-style: none;
+  padding-left: 0;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+ 
+.todo li {
+  color: #333;
+  background-color: rgba(255,255,255,.5);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: left;
 }

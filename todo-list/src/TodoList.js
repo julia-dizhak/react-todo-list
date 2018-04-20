@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './style.css';
 
+import TodoItems from './components/TodoItems';
+
 export default class TodoList extends Component {
   state = {
     items: []
@@ -15,20 +17,31 @@ export default class TodoList extends Component {
     });
 
     this.setState({ items: itemArray });
-    event.preventDefault;
+
+    this._inputElement.value = '';
+
+    event.preventDefault();
   }
 
   render() {
     return (
       <div className="todo-list">
-          <div className="header">
-            <form onSubmit={this.addItem}>
+
+          <div>
+            <form 
+                className="todo-form" 
+                onSubmit={this.addItem}>
+
               <input 
                   ref={(a) => this._inputElement = a}
                   placeholder="enter task" />
+
               <button type="submit">add</button>
             </form>
           </div>
+
+          <TodoItems                  
+              entries={this.state.items} />
         </div>
     );
   }
