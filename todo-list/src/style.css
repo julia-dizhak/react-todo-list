@@ -2,7 +2,15 @@ body {
   margin: 0;
   padding: 50px;
   background-color: #66CCFF;
-  font-family: sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding: 25px;
+  margin: 0;
+  overflow: auto;
+}
+
+h1 {
+  text-align: center;
 }
 
 .todo-form {
@@ -45,3 +53,51 @@ body {
   border-radius: 5px;
   text-align: left;
 }
+
+.menu-button {
+  background-color: #96D9FF;
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10px solid #0065A6;
+  outline: none;
+  transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+
+.menu-button:hover {
+  background-color: #96D9FF;
+  cursor: pointer;
+  border-color: #003557;
+  transform: scale(1.2, 1.2);
+}
+
+.menu-button:active {
+  border-color: #003557;
+  background-color: #FFF;
+}
+
+.flyout-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFE600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+.flyout-menu h2 a {
+  color: #333;
+  margin-left: 15px;
+  text-decoration: none;
+}
+.flyout-menu h2 a:hover {
+  text-decoration: underline;
+}
+
+.flyout-menu.visible {
+  transform: translate3d(0vw, 0, 0);
+}  

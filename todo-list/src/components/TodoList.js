@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
-
-import TodoItems from './components/TodoItems';
+import TodoItems from './TodoItems';
 
 export default class TodoList extends Component {
   state = {
@@ -24,10 +22,12 @@ export default class TodoList extends Component {
   }
 
   render() {
+
+    
     return (
       <div className="todo-list">
-
           <div>
+            <h1>Todo List</h1>
             <form 
                 className="todo-form" 
                 onSubmit={this.addItem}>

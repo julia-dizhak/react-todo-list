@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TodoList from './TodoList';
+import PageContainer from './components/PageContainer';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<TodoList />, document.getElementById('root'));
+ReactDOM.render(<PageContainer />, document.getElementById('root'));
 registerServiceWorker();
