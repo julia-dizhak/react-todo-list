@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from './Button';
-import CounterDisplay from './Display';
+import SizeDisplay from './Display';
 import { connect } from 'react-redux'; // syntax named import
 
 export class CounterContainer extends Component {
@@ -20,19 +20,28 @@ export class CounterContainer extends Component {
                <h2>Counter Display</h2>
                 <div>
                     <Button 
-                        label="example1" 
-                        increment={1} />    
+                        label="example1"
+                        operation="+" 
+                        operand={1000} />    
                 </div>        
                 <Button
                     label="example2"
-                    increment={5} />
+                    operation="-"
+                    operand={5} />
+                {/* <div>
+                    <Button 
+                        label="example3" 
+                        operation="*"
+                        operand={20} />    
+                </div> 
                 <div>
                     <Button 
                         label="example3" 
-                        increment={100} />    
-                </div>     
+                        operation="/"
+                        operand={100} />    
+                </div>       */}
 
-                <CounterDisplay />
+                <SizeDisplay />
             </div>    
         );
     }

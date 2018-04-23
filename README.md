@@ -4,7 +4,12 @@ creating todo list by React
 ## Todo taks for project:
 * don't push empty task in todo
 * migrate to state and show how many tasks now in DisplayCounter
-* new challenge: operation +, -, ...
+
+* new challenge: operation +, -, ... (add multiple, division)
+* move file to utils
+
+## Redux
+* difference between actions and dispatches
 
 ## Todo list desc
 * initial state

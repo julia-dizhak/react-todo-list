@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-const incrementCounter = (increment) => ({ type: 'INCREMENT', increment }) // action just an object
+import { incrementCounter, decrementCounter } from './../../store/actions'; 
 
 export class Button extends Component {
+    actions = {
+        "+": this.props.incrementCounter,
+        "-": this.props.decrementCounter
+    }
+
     handleClick = () => {
-        //this.props.handleClick(this.props.increment);
-        this.props.incrementCounter(this.props.increment)
+        // this.props.handleClick(this.props.increment);
+        // this.props.incrementCounter(this.props.increment)
         // can do this.props.dispatch ?
+       
+        // this.props.operation
+        // switch 
+        // object look up
+        this.actions[this.props.operation](this.props.operand)
     }
 
     render() {
@@ -18,7 +27,7 @@ export class Button extends Component {
                 <label>{ label }: </label>
                 <button 
                     onClick={this.handleClick}>
-                    +{ this.props.increment }
+                    { this.props.operation } { this.props.operand }
                 </button>
             </React.Fragment>
         );
@@ -27,6 +36,6 @@ export class Button extends Component {
 
 export default Button = connect(
     null, 
-    { incrementCounter }
+    { incrementCounter, decrementCounter }
 )(Button); // I need behavior
 
