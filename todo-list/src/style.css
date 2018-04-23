@@ -64,14 +64,12 @@ h1 {
   outline: none;
   transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
 }
-
 .menu-button:hover {
   background-color: #96D9FF;
   cursor: pointer;
   border-color: #003557;
   transform: scale(1.2, 1.2);
 }
-
 .menu-button:active {
   border-color: #003557;
   background-color: #FFF;
@@ -80,7 +78,7 @@ h1 {
 .flyout-menu {
   width: 100vw;
   height: 100vh;
-  background-color: #FFE600;
+  background-color: #003557;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,14 +88,18 @@ h1 {
   z-index: 1000;
 }
 .flyout-menu h2 a {
-  color: #333;
+  color: #fff;
   margin-left: 15px;
   text-decoration: none;
 }
 .flyout-menu h2 a:hover {
   text-decoration: underline;
+  color: #fff;
 }
-
 .flyout-menu.visible {
   transform: translate3d(0vw, 0, 0);
 }  
+
+.counter {
+  text-align: center;
+}

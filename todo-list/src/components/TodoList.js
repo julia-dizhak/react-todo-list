@@ -22,8 +22,6 @@ export default class TodoList extends Component {
   }
 
   render() {
-
-    
     return (
       <div className="todo-list">
           <div>
