@@ -1,11 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function CounterDisplay(props) {
+export function CounterDisplay(props) {
     const { counter } = props;  
 
     return (
         <div>
-            counter is { counter }
+            sum is { counter }
         </div>    
     );
 }
+
+const mapStateToProps = state => {
+    return {
+        counter: state.counter
+    }
+} // don't need behavior here; it's HOC
+
+export default connect(mapStateToProps)(CounterDisplay); 

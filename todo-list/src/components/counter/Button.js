@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Button extends Component {
+const incrementCounter = (increment) => ({ type: 'INCREMENT', increment }) // action just an object
+
+export class Button extends Component {
     handleClick = () => {
-        this.props.handleClick(this.props.increment)
+        //this.props.handleClick(this.props.increment);
+        this.props.incrementCounter(this.props.increment)
+        // can do this.props.dispatch ?
     }
 
     render() {
@@ -19,3 +24,9 @@ export default class Button extends Component {
         );
     }    
 }
+
+export default Button = connect(
+    null, 
+    { incrementCounter }
+)(Button); // I need behavior
+

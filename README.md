@@ -3,7 +3,8 @@ creating todo list by React
 
 ## Todo taks for project:
 * don't push empty task in todo
-
+* migrate to state and show how many tasks now in DisplayCounter
+* new challenge: operation +, -, ...
 
 ## Todo list desc
 * initial state
