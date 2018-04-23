@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function Button(props) {
-    const { label, increment } = props;  
+export default class Button extends Component {
+    handleClick = () => {
+        this.props.handleClick(this.props.increment)
+    }
 
-    return (
-        <React.Fragment>
-            <label>{ label }: </label>
-            <button 
-                onClick={props.handleClick.bind(null, increment)}>
-                +{ increment }
-            </button>
-        </React.Fragment>
-    );
-  
+    render() {
+        const { label } = this.props;  
+
+        return (
+            <React.Fragment>
+                <label>{ label }: </label>
+                <button 
+                    onClick={this.handleClick}>
+                    +{ this.props.increment }
+                </button>
+            </React.Fragment>
+        );
+    }    
 }

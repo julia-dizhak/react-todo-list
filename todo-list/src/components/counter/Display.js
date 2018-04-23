@@ -5,7 +5,7 @@ export default function CounterDisplay(props) {
 
     return (
         <div>
-            { counter }
+            counter is { counter }
         </div>    
     );
 }
