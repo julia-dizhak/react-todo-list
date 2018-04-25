@@ -1,5 +1,9 @@
 // called 4 times: 1 - initial
-const reducer = function(state, action) {
+const initialState = {
+    counter: 1
+};
+
+const reducer = function(state = initialState, action) {
     //console.log(action);
     switch (action.type) {
         case 'INCREMENT':  

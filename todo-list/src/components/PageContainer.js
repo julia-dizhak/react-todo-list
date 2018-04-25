@@ -5,6 +5,7 @@ import TodoList from './TodoList';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
 import CounterContainer from './counter/';
+import ProductList from './ProductList';
 
 export default class PageContainer extends Component {
   state = {
@@ -24,7 +25,10 @@ export default class PageContainer extends Component {
               visibleState={this.state.visible}
               handleMouseDown={this.handleMouseDown} />
           <TodoList />
+          
           <CounterContainer />
+
+          <ProductList />
         </React.Fragment>
     );
   }

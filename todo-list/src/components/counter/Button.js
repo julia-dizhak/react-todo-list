@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './../../store/actions'; 
+import { incrementCounter, decrementCounter } from './../../store/actions/counter'; 
 
 export class Button extends Component {
     actions = {

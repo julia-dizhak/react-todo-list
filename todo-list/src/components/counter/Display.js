@@ -20,9 +20,8 @@ export function SizeDisplay(props) {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
-        counter: state.counter
+        counter: state.counterState.counter
     }
 } // don't need behavior here; it's HOC
 

@@ -7,6 +7,7 @@ creating todo list by React
 
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils
+* action.type
 
 ## Redux
 * difference between actions and dispatches
