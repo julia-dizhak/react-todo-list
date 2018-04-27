@@ -103,3 +103,12 @@ h1 {
 .counter {
   text-align: center;
 }
+
+.product-list {
+  width: 50%;
+  margin: 30px auto 0;
+  text-align: center;
+}
+.product-list li {
+  text-align: left;
+}

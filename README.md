@@ -1,7 +1,7 @@
-# react-todo-list
+# Todo-list
 creating todo list by React
 
-## Todo taks for project:
+## Todo tasks:
 * don't push empty task in todo
 * migrate to state and show how many tasks now in DisplayCounter
 
@@ -12,20 +12,20 @@ creating todo list by React
 ## Redux
 * difference between actions and dispatches
 
-## Todo list desc
+### Todo list desc
 * initial state
 * handle the submit
 * populate state
 * display tasks
 * add finish touches
 
-## Working with external data
+### Working with external data
 * app makes a request for some data to a remote service;
 * the remote service recieves the request and sends some data back;
 * app receives the data;
 * app formats and displays data to the user;
 
-## Menu by react motion
+### Menu by react-motion
 * animating property value changes;
 * synchronizing animations on a timeline;
 * staggering animations across a range of elements;

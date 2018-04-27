@@ -19,7 +19,7 @@ export function SizeDisplay(props) {
     );
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
     return {
         counter: state.counterState.counter
     }

@@ -51,3 +51,8 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'));
 registerServiceWorker();
+
+// The browser shouldn’tperform a page refresh, but the application reloads and shows the correct output
+if (module.hot) {
+    module.hot.accept();
+}
