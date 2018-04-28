@@ -5,6 +5,7 @@ import TodoList from './TodoList';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
 import CounterContainer from './counter/';
+import TextAreaCounter from './counter/TextAreaCounter';
 import ProductList from './ProductList';
 
 export default class PageContainer extends Component {
@@ -26,6 +27,11 @@ export default class PageContainer extends Component {
               handleMouseDown={this.handleMouseDown} />
           <TodoList />
           
+          <React.Fragment>
+            Textarea counter:
+            <TextAreaCounter />
+          </React.Fragment>
+
           <CounterContainer />
 
           <ProductList />

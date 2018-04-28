@@ -1,3 +1,13 @@
-import moduleName from 'module'
+import {bytesDisplay} from './components/counter/Display';
 
-// write test first
+describe('bytesDisplay', () => {
+    it('divides', () => {
+        const actual = bytesDisplay(1000001);
+        expect(actual).toMatch('KB');
+    });
+
+    it('does not divided', () => {
+        const actual = bytesDisplay(1000000);
+        expect(actual).not.toMatch('KB');
+    })
+})
