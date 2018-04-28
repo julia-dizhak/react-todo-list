@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 export const bytesDisplay = (bytes) => {
-    if (bytes > 100000) {
+    if (bytes > 1000000) {
         return `${bytes/1000}KB`;
     } else {
         return `${bytes}B`;

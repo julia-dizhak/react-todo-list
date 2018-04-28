@@ -1,4 +1,8 @@
-import {bytesDisplay} from './components/counter/Display';
+/**
+ * @jest-environment node
+ */
+
+import { bytesDisplay } from './../components/counter/Display';
 
 describe('bytesDisplay', () => {
     it('divides', () => {
@@ -9,5 +13,5 @@ describe('bytesDisplay', () => {
     it('does not divided', () => {
         const actual = bytesDisplay(1000000);
         expect(actual).not.toMatch('KB');
-    })
+    });
 })

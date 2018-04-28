@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Button from './Button';
 import SizeDisplay from './Display';
+import TextAreaCounter from './TextAreaCounter';
 import { connect } from 'react-redux'; // syntax named import
 
 export class CounterContainer extends Component {
@@ -42,6 +43,11 @@ export class CounterContainer extends Component {
                 </div>       */}
 
                 <SizeDisplay />
+
+                <React.Fragment>
+                    Textarea counter:
+                    <TextAreaCounter />
+                </React.Fragment>
             </div>    
         );
     }
