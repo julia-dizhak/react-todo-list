@@ -36,7 +36,7 @@ export default class TextAreaCounter extends Component {
     }
   
     render() {
-        const { text } = this.props;
+        //const { text } = this.props;
         let counter = null;
 
         if (this.state.text.length > 0) {

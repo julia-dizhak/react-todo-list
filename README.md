@@ -30,6 +30,11 @@ Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 ## Tests with Jest
 * yarn test
 * should write tests first
+* test immutability of state
+* react-test-renderer
+* enzyme
+* toMatchSnapshot
+
 
 ### Todo:
 * don't push empty task in todo

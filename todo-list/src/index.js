@@ -38,11 +38,11 @@ const store = createStore(
 // store.dispatch({type: 'INCREMENT'});
 // console.log(store, store.getState()); // -> counter is 4
 
-store.dispatch({
-    type: 'ADD_USER',
-    user: {name: 'Dan'}
-});
-console.log(store, store.getState()); 
+// store.dispatch({
+//     type: 'ADD_USER',
+//     user: {name: 'Dan'}
+// });
+// console.log(store, store.getState()); 
 
 // Provider - access to the store
 ReactDOM.render(

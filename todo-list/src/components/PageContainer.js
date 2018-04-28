@@ -4,7 +4,7 @@ import './../style.css';
 import TodoList from './TodoList';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
-import CounterContainer from './counter/';
+// import CounterContainer from './counter/';
 import ProductList from './ProductList';
 
 export default class PageContainer extends Component {
@@ -26,7 +26,7 @@ export default class PageContainer extends Component {
               handleMouseDown={this.handleMouseDown} />
           <TodoList />
           
-          <CounterContainer />
+          {/* <CounterContainer /> */}
 
           <ProductList />
         </React.Fragment>
