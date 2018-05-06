@@ -112,3 +112,19 @@ h1 {
 .product-list li {
   text-align: left;
 }
+
+.favourite-colors {
+  width: 40%;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.favourite-colors ul {
+  text-align: left;
+}
+
+.users-list {
+  width: 40%;
+  margin: 30px auto 0;
+  text-align: center;
+}

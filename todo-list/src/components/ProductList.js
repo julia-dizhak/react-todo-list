@@ -21,6 +21,7 @@ export class ProductList extends Component {
   
   render() {
     let { error, loading, products } = this.props;
+
     if (!products) {
         products = []
     }

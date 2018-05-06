@@ -5,17 +5,23 @@ import PageContainer from './components/PageContainer';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
 import counterReducer from './store/reducers/counter';
 import productReducer from './store/reducers/products';
-import userReducer from './store/reducers/users';
-import thunk from 'redux-thunk';
+
+import { usersReducer } from './components/UsersList';
+
+import { favoriteColorsReducer } from './components/FavouriteColors';
+//import { addColor, removeColor } from './components/FavouriteColors';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const reducers = combineReducers({
     counterState: counterReducer,
     productState: productReducer,
-    userState: userReducer
+    usersState: usersReducer,
+    favoriteColors: favoriteColorsReducer
 });
 
 const store = createStore(
@@ -38,11 +44,11 @@ const store = createStore(
 // store.dispatch({type: 'INCREMENT'});
 // console.log(store, store.getState()); // -> counter is 4
 
-// store.dispatch({
-//     type: 'ADD_USER',
-//     user: {name: 'Dan'}
-// });
-// console.log(store, store.getState()); 
+// functions from FavouriteColors Component
+//store.dispatch(addColor("blue"));
+//store.dispatch(addColor("gray"));
+//store.dispatch(removeColor("black"));
+//console.log(store.getState());
 
 // Provider - access to the store
 ReactDOM.render(
@@ -52,7 +58,7 @@ ReactDOM.render(
     document.getElementById('root'));
 registerServiceWorker();
 
-// The browser shouldn’tperform a page refresh, but the application reloads and shows the correct output
+// browser shouldn’tperform a page refresh, but the application reloads and shows the correct output
 if (module.hot) {
     module.hot.accept();
 }

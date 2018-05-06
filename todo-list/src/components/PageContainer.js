@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './../style.css';
 
-import TodoList from './TodoList';
+import TodoList from './todo/TodoList';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
 // import CounterContainer from './counter/';
+import UsersList from './UsersList';
 import ProductList from './ProductList';
+import FavouriteColors from './FavouriteColors';
 
 export default class PageContainer extends Component {
   state = {
@@ -29,6 +31,11 @@ export default class PageContainer extends Component {
           {/* <CounterContainer /> */}
 
           <ProductList />
+
+          <UsersList />
+
+          <FavouriteColors />
+          
         </React.Fragment>
     );
   }
