@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import PageContainer from './components/PageContainer';
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import TodoContainer from './components/todo/TodoContainer';
+import CounterContainer from './components/counter/';
+
 import counterReducer from './store/reducers/counter';
 import productReducer from './store/reducers/products';
-
 import { usersReducer } from './components/users/UsersList';
-
 import { favoriteColorsReducer } from './components/FavouriteColors';
 //import { addColor, removeColor } from './components/FavouriteColors';
 
@@ -30,7 +29,6 @@ const store = createStore(
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-//console.log(store);
 
 // subscribe -> every time you change can you please execute this function
 // store.subscribe(() => {
@@ -50,10 +48,14 @@ const store = createStore(
 //store.dispatch(removeColor("black"));
 //console.log(store.getState());
 
-// Provider - access to the store
 ReactDOM.render(
     <Provider store={store}> 
-        <PageContainer />
+        <Router>
+            <React.Fragment>
+                <Route exact path="/" component={TodoContainer}/>
+                <Route exact path="/counter" component={CounterContainer} />
+            </React.Fragment>
+        </Router>
     </Provider>,
     document.getElementById('root'));
 registerServiceWorker();

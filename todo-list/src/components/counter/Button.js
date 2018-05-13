@@ -37,5 +37,5 @@ export class Button extends Component {
 export default Button = connect(
     null, 
     { incrementCounter, decrementCounter }
-)(Button); // I need behavior
+)(Button); // behavior
 

@@ -1,7 +1,8 @@
 # Todo-list
-creating todo list by React
+creating todo list by React. Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 
-Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
+counter: todo-list/counter
+
 
 ## Todo list desc
 * initial state
@@ -9,6 +10,17 @@ Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 * populate state
 * display tasks
 * add finish touches
+
+## Menu by react-motion
+* animating property value changes;
+* synchronizing animations on a timeline;
+* staggering animations across a range of elements;
+* animate an element before it appears, or animate it before it gets removed;
+* animate an element across views/routes;
+* The spring function takes care of interpolating values from a starting point to an ending point;
+
+## Counter
+
 
 ## Redux
 * difference between actions and dispatches
@@ -19,13 +31,7 @@ Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 * app receives the data;
 * app formats and displays data to the user;
 
-## Menu by react-motion
-* animating property value changes;
-* synchronizing animations on a timeline;
-* staggering animations across a range of elements;
-* animate an element before it appears, or animate it before it gets removed;
-* animate an element across views/routes;
-* The spring function takes care of interpolating values from a starting point to an ending point;
+
 
 ## Tests with Jest
 * yarn test
@@ -43,6 +49,7 @@ Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils
 * action.type
+
 
 ### Todo Users:
 * add action USER_LIST_FAILED
