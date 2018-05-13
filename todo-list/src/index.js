@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import TodoContainer from './components/todo/TodoContainer';
-import CounterContainer from './components/counter/';
 
-import counterReducer from './store/reducers/counter';
+import CounterContainer from './components/counter/';
+import { counterReducer } from './components/counter/';
+
 import productReducer from './store/reducers/products';
 import { usersReducer } from './components/users/UsersList';
 import { favoriteColorsReducer } from './components/FavouriteColors';

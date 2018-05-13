@@ -4,7 +4,7 @@ import axios from 'axios';
 import filter from 'lodash/filter';
 import store from './../../index';
 
-// cctions
+// actions
 const USER_LIST_SUCCESS = 'USER_LIST_SUCCESS',
     ADD_USER = 'ADD_USER',
     DELETE_USER = 'DELETE_USER';
@@ -17,6 +17,7 @@ const initialUserState = {
         }
     ]
 }
+
 export const usersReducer = function(state = initialUserState, action) {
     if (state === undefined) {
         state = []
@@ -40,6 +41,12 @@ export const usersReducer = function(state = initialUserState, action) {
 }
 
 // action creators
+export function addUser(user) {
+    return {
+      type: ADD_USER
+    };
+}
+
 export function getUsersSuccess(users) {
     return {
       type: USER_LIST_SUCCESS,

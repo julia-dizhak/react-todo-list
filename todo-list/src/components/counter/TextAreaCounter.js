@@ -7,7 +7,7 @@ const propTypes = {
     handleOnChange: PropTypes.func
 },
 defaultProps = {
-    text: 'Bob',
+    text: 'Example',
 };
 
 export default class TextAreaCounter extends Component {

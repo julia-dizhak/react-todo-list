@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './../../store/actions/counter'; 
+import { incrementCounter, decrementCounter } from './index'; 
 
 export class Button extends Component {
-    actions = {
-        "+": this.props.incrementCounter,
-        "-": this.props.decrementCounter
+    state = {
+        actions: {
+            "+": this.props.incrementCounter,
+            "-": this.props.decrementCounter
+        }
     }
+    
 
     handleClick = () => {
         // this.props.handleClick(this.props.increment);
@@ -20,13 +23,16 @@ export class Button extends Component {
     }
 
     render() {
-        const { label } = this.props;  
-
+        const { label, onClick } = this.props;  
+        //console.log(this.props.incrementCounter)
+        console.log(this.state.actions)
         return (
             <React.Fragment>
                 <label>{ label }: </label>
+
                 <button 
-                    onClick={this.handleClick}>
+                    // onClick={this.handleClick}
+                    onClick={onClick}>
                     { this.props.operation } { this.props.operand }
                 </button>
             </React.Fragment>
