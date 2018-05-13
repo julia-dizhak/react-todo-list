@@ -23,18 +23,21 @@ export class Button extends Component {
     }
 
     render() {
-        const { label, onClick } = this.props;  
+        const { label, onClick, children } = this.props;  
         //console.log(this.props.incrementCounter)
         console.log(this.state.actions)
         return (
             <React.Fragment>
-                <label>{ label }: </label>
-
-                <button 
-                    // onClick={this.handleClick}
-                    onClick={onClick}>
-                    { this.props.operation } { this.props.operand }
-                </button>
+                <label>
+                    { label } :&nbsp; 
+                    <button 
+                        type="button"
+                        // onClick={this.handleClick}
+                        onClick={onClick}>
+                        { children }
+                        { this.props.operation } { this.props.operand }
+                    </button>
+                </label>
             </React.Fragment>
         );
     }    

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 
-import Button from './Button';
-import SizeDisplay from './Display';
-import TextAreaCounter from './TextAreaCounter';
+import CounterPresenter from './CounterPresenter';
 
 // actions
 export const incrementCounter = (value) => ({ type: 'INCREMENT', value }) // action just an object
@@ -43,9 +41,8 @@ export class CounterContainer extends Component {
         }
 
         this.onIncrement = this.onIncrement.bind(this);
-        //this.onDecrement = this.onDecrement.bind(this);
+        this.onDecrement = this.onDecrement.bind(this);
     }
-    
     
     // incrementCounter = (increment) => {
     //     this.setState({ counter: this.state.counter + increment });
@@ -57,44 +54,19 @@ export class CounterContainer extends Component {
         })
     }
 
+    onDecrement() {
+        this.setState({
+            counter: this.state.counter - 1
+        })
+    }
+
     render() {
         return (
-            <div className="counter">
-               <h1>Counter Display</h1>
-               <p>counter is { this.state.counter }</p>
-               
-               <div>
-                    <Button 
-                        onClick={this.onIncrement}
-                        label="example1"
-                        operation="+" 
-                        operand={1000} />    
-                </div>  
-
-                <Button
-                    label="example2"
-                    operation="-"
-                    operand={5} />
-                {/* <div>
-                    <Button 
-                        label="example3" 
-                        operation="*"
-                        operand={20} />    
-                </div> 
-                <div>
-                    <Button 
-                        label="example3" 
-                        operation="/"
-                        operand={100} />    
-                </div>       */}
-
-                <SizeDisplay />
-
-                <React.Fragment>
-                    Textarea counter:
-                    {/* <TextAreaCounter /> */}
-                </React.Fragment>
-            </div>    
+            <CounterPresenter 
+                counter={this.state.counter} 
+                onIncrement={this.onIncrement}
+                onDecrement={this.onDecrement}
+            />
         );
     }
 }
@@ -105,4 +77,4 @@ export default CounterContainer = connect(
     }, 
   () => {
     return {};
-  })(CounterContainer); 
+})(CounterContainer); 
