@@ -7,9 +7,6 @@ export default function MenuButton(props) {
         <button 
             className="menu-button"
             onMouseDown={handleMouseDown}>
-            
         </button>
     );
 }
-
-

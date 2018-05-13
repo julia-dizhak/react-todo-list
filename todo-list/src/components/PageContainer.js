@@ -4,8 +4,8 @@ import './../style.css';
 import TodoList from './todo/TodoList';
 import MenuButton from './MenuButton';
 import Menu from './Menu';
-// import CounterContainer from './counter/';
-import UsersList from './UsersList';
+import CounterContainer from './counter/';
+import UsersList from './users/UsersList';
 import ProductList from './ProductList';
 import FavouriteColors from './FavouriteColors';
 
@@ -26,9 +26,10 @@ export default class PageContainer extends Component {
           <Menu 
               visibleState={this.state.visible}
               handleMouseDown={this.handleMouseDown} />
+              
           <TodoList />
           
-          {/* <CounterContainer /> */}
+          <CounterContainer />
 
           <ProductList />
 

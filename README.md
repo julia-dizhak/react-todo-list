@@ -43,3 +43,6 @@ Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils
 * action.type
+
+### Todo Users:
+* add action USER_LIST_FAILED

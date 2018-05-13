@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 import counterReducer from './store/reducers/counter';
 import productReducer from './store/reducers/products';
 
-import { usersReducer } from './components/UsersList';
+import { usersReducer } from './components/users/UsersList';
 
 import { favoriteColorsReducer } from './components/FavouriteColors';
 //import { addColor, removeColor } from './components/FavouriteColors';
@@ -62,3 +62,5 @@ registerServiceWorker();
 if (module.hot) {
     module.hot.accept();
 }
+
+export default store;

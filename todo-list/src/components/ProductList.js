@@ -4,6 +4,7 @@ import { fetchProducts } from './../store/actions/products';
 
 export class ProductList extends Component {
   componentDidMount() {
+      
     this.props.dispatch(fetchProducts());
 
     // using fetch
