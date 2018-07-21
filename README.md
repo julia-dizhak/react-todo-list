@@ -1,7 +1,9 @@
 # Todo-list
-creating todo list by React. Demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
+creating todo list by React. 
+Demo is 
+https://julia-dizhak.github.io/react-todo-list/todo-list/demo/
 
-counter: todo-list/counter
+Counter demo is https://julia-dizhak.github.io/react-todo-list/todo-list/demo/counter
 
 
 ## Todo list desc
@@ -11,6 +13,7 @@ counter: todo-list/counter
 * display tasks
 * add finish touches
 
+
 ## Menu by react-motion
 * animating property value changes;
 * synchronizing animations on a timeline;
@@ -19,18 +22,19 @@ counter: todo-list/counter
 * animate an element across views/routes;
 * The spring function takes care of interpolating values from a starting point to an ending point;
 
-## Counter
 
+## Counter
+* desc ...
 
 ## Redux
 * difference between actions and dispatches
+
 
 ## Working with external data
 * app makes a request for some data to a remote service;
 * the remote service recieves the request and sends some data back;
 * app receives the data;
 * app formats and displays data to the user;
-
 
 
 ## Tests with Jest
@@ -45,7 +49,6 @@ counter: todo-list/counter
 ### Todo:
 * don't push empty task in todo
 * migrate to state and show how many tasks now in DisplayCounter
-
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils
 * action.type

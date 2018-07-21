@@ -8,6 +8,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
     "jest": "^22.4.3",
     "jest-cli": "^22.4.3",
     "jest-environment-node": "^22.4.3",
@@ -28,6 +29,11 @@
     "presets": [
       "es2015",
       "react"
+    ],
+    "plugins": [
+      "syntax-dynamic-import",
+      "transfrom-class-properties",
+      "transfrom-object-rest-spread"
     ]
   },
   "scripts": {

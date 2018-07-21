@@ -7,6 +7,14 @@ import CounterPresenter from './CounterPresenter';
 export const incrementCounter = (value) => ({ type: 'INCREMENT', value }) // action just an object
 export const decrementCounter = (value) => ({ type: 'DECREMENT', value }) // action just an object
 
+const incrementUpdate = prevState => ({
+    counter: prevState.counter + 1
+});
+
+const decrementUpdate = prevState => ({
+    counter: prevState.counter - 1
+});
+  
 // reducer
 const initialState = {
     counter: 1
@@ -35,6 +43,7 @@ export const counterReducer = function(state = initialState, action) {
 export class CounterContainer extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {
             counter: 0,
             title: 'Example'
@@ -48,16 +57,22 @@ export class CounterContainer extends Component {
     //     this.setState({ counter: this.state.counter + increment });
     // }
 
+    // onIncrement() {
+    //     this.setState({
+    //         counter: this.state.counter + 1
+    //     })
+    // }
     onIncrement() {
-        this.setState({
-            counter: this.state.counter + 1
-        })
+        this.setState(incrementUpdate);
     }
 
+    // onDecrement() {
+    //     this.setState({
+    //         counter: this.state.counter - 1
+    //     })
+    // }
     onDecrement() {
-        this.setState({
-            counter: this.state.counter - 1
-        })
+        this.setState(decrementUpdate);
     }
 
     render() {

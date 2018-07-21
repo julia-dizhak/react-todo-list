@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import TodoContainer from './components/todo/TodoContainer';
+import ItemListContainer from './components/list/ItemListContainer';
+import { todoReducer } from './components/todo/TodoList';
+import { doAddTodo, doToggleTodo } from './components/todo/TodoList';
 
 import CounterContainer from './components/counter/';
 import { counterReducer } from './components/counter/';
@@ -13,41 +16,37 @@ import { counterReducer } from './components/counter/';
 import productReducer from './store/reducers/products';
 import { usersReducer } from './components/users/UsersList';
 import { favoriteColorsReducer } from './components/FavouriteColors';
-//import { addColor, removeColor } from './components/FavouriteColors';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const reducers = combineReducers({
+    todo: todoReducer,
     counterState: counterReducer,
     productState: productReducer,
     usersState: usersReducer,
     favoriteColors: favoriteColorsReducer
 });
 
-const store = createStore(
+export const store = createStore(
     reducers, 
     {}, // initial state
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-// subscribe -> every time you change can you please execute this function
-// store.subscribe(() => {
-//     console.log('store has changed') // will run 3 times
-// })
+// todo
+console.log('initial state:');
+console.log(store.getState());
 
-// console.log(store, store.getState()); -> counter is 1
-// //store.dispatch({type: 'INCREMENT'}, value: 4);
-// store.dispatch({type: 'INCREMENT'});
-// store.dispatch({type: 'INCREMENT'});
-// store.dispatch({type: 'INCREMENT'});
-// console.log(store, store.getState()); // -> counter is 4
+const unsubscribe = store.subscribe(() => {
+  console.log('store update, current state:');
+  console.log(store.getState());
+});
 
-// functions from FavouriteColors Component
-//store.dispatch(addColor("blue"));
-//store.dispatch(addColor("gray"));
-//store.dispatch(removeColor("black"));
-//console.log(store.getState());
+store.dispatch(doAddTodo('0', 'learn redux'));
+store.dispatch(doAddTodo('1', 'learn mobx'));
+store.dispatch(doToggleTodo('0'));
+unsubscribe();
 
 ReactDOM.render(
     <Provider store={store}> 
@@ -55,6 +54,7 @@ ReactDOM.render(
             <React.Fragment>
                 <Route exact path="/" component={TodoContainer}/>
                 <Route exact path="/counter" component={CounterContainer} />
+                <Route exact path="/list" component={ItemListContainer} />
             </React.Fragment>
         </Router>
     </Provider>,

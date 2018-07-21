@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList render "no items" when no items are given 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList render component 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList render correctly component 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList renders "no items" when no items are given 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render component 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render component correctly 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render correctly component 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render correctly componentrenders "no items" when no items are given 1`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render correctly componentrenders "no items" when no items are given 2`] = `
+<span>
+  'no items'
+</span>
+`;
+
+exports[`ItemList should render correctly componentrenders 1`] = `
+<span>
+  'no items'
+</span>
+`;
