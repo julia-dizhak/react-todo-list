@@ -23,7 +23,9 @@ import { favoriteColorsReducer } from './components/FavouriteColors';
 import registerServiceWorker from './registerServiceWorker';
 
 const reducers = combineReducers({
-    todo: todoReducer,
+    todoState: todoReducer,
+
+
     usersState: usersReducer,
     counterState: counterReducer,
     productState: productReducer,

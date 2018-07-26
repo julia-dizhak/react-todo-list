@@ -29,41 +29,53 @@ export function doToggleLoginModal(open) {
     };
 }
 
-// reducers
-export function applyAddTodo(state, action) {
-    const todo = Object.assign(
-        {}, 
-        action.todo, 
-        { completed: false }
-    ); 
-    return state.concat(todo);
-}
-
-function applyToggleTodo(state, action) {
-    return state.map(todo =>
-        todo.id === action.todo.id
-        ? Object.assign(
-            {}, 
-            todo, 
-            { completed: !todo.completed })
-        : todo
-    ); 
-}
-
-const initialState = [];
-
 // define a reducer
+//const initialState = [];
+const initialState = { 
+    currentUser: null, 
+    todos: [],
+    filter: 'SHOW_ALL'
+};
+
 export function todoReducer(state = initialState, action) {
     switch (action.type) {
         case TODO_ADD : {
             return applyAddTodo(state, action);
         }
-        case TODO_TOGGLE : {
-            return applyToggleTodo(state, action);
-        }
+        // case TODO_TOGGLE : {
+        //     return applyToggleTodo(state, action);
+        // }
         default : 
             return state;
     }
+}
+
+export function applyAddTodo(state, action) {
+    // const todo = Object.assign({}, action.todo, { completed: false }); 
+    // return state.concat(todo);
+
+    // nested data structure
+    const todo = Object.assign({}, action.todo, { completed: false});
+    const todos = state.todos.concat(todo);
+    return Object.assign({}, state, { todos });
+}
+
+export function applyToggleTodo(state, action) {
+    // return state.map(todo =>
+    //     todo.id === action.todo.id
+    //     ? Object.assign(
+    //         {}, 
+    //         todo, 
+    //         { completed: !todo.completed })
+    //     : todo
+    // ); 
+
+    // nested data structure
+    const todos = state.todos.map(todo =>
+        todo.id === action.todo.id
+        ? Object.assign({}, todo, { completed: !todo.completed })
+        : todo );
+    return Object.assign({}, state, { todos });
 }
 
 export default class TodoContainer extends Component {
