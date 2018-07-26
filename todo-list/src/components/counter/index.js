@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 
+//import { store } from './../../index';
 import CounterPresenter from './CounterPresenter';
 
-// actions
-export const incrementCounter = (value) => ({ type: 'INCREMENT', value }) // action just an object
-export const decrementCounter = (value) => ({ type: 'DECREMENT', value }) // action just an object
-
-const incrementUpdate = prevState => ({
-    counter: prevState.counter + 1
-});
-
-const decrementUpdate = prevState => ({
-    counter: prevState.counter - 1
-});
-  
-// reducer
 const initialState = {
-    counter: 1
+    counter: 0
 };
 
+// reducer
 export const counterReducer = function(state = initialState, action) {
     switch (action.type) {
         case 'INCREMENT':  
@@ -36,9 +25,21 @@ export const counterReducer = function(state = initialState, action) {
             }
         
         default: 
-            return state
+            return state;
     }    
 }
+
+// actions
+export const incrementCounter = (value) => ({ type: 'INCREMENT', value }) 
+export const decrementCounter = (value) => ({ type: 'DECREMENT', value }) 
+
+const incrementUpdate = prevState => ({
+    counter: prevState.counter + 1
+});
+
+const decrementUpdate = prevState => ({
+    counter: prevState.counter - 1
+});
 
 export class CounterContainer extends Component {
     constructor(props) {
@@ -64,6 +65,7 @@ export class CounterContainer extends Component {
     // }
     onIncrement() {
         this.setState(incrementUpdate);
+        //store.dispatch(incrementUpdate);
     }
 
     // onDecrement() {

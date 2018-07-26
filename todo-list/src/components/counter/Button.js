@@ -9,7 +9,6 @@ export class Button extends Component {
             "-": this.props.decrementCounter
         }
     }
-    
 
     handleClick = () => {
         // this.props.handleClick(this.props.increment);
@@ -19,7 +18,7 @@ export class Button extends Component {
         // this.props.operation
         // switch 
         // object look up
-        this.actions[this.props.operation](this.props.operand)
+        this.actions[this.props.operation](this.props.operand);
     }
 
     render() {
@@ -32,7 +31,6 @@ export class Button extends Component {
                     { label } :&nbsp; 
                     <button 
                         type="button"
-                        // onClick={this.handleClick}
                         onClick={onClick}>
                         { children }
                         { this.props.operation } { this.props.operand }
@@ -47,4 +45,3 @@ export default Button = connect(
     null, 
     { incrementCounter, decrementCounter }
 )(Button); // behavior
-

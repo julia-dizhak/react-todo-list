@@ -2,28 +2,31 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import filter from 'lodash/filter';
-import store from './../../index';
+import { store } from './../../index';
 
-// actions
-const USER_LIST_SUCCESS = 'USER_LIST_SUCCESS',
-    ADD_USER = 'ADD_USER',
-    DELETE_USER = 'DELETE_USER';
 
-// reducer
-const initialUserState = {
+const initialState = {
     users: [
         {
-            name: 'test 111'
+            name: 'Julia'
         }
-    ]
+    ],
+    message: 'initial message'
 }
 
-export const usersReducer = function(state = initialUserState, action) {
+// define a reducer
+export const usersReducer = function(state = initialState, action) {
     if (state === undefined) {
-        state = []
+        state = [];
     }
 
     switch(action.type) {
+        case 'UPDATE_MESSAGE': 
+            const newState = Object.assign({}, state, {
+                message: action.message
+            })
+            return newState.message;
+
         case 'USER_LIST_SUCCESS':
           return Object.assign({}, state, {users: action.users});
 
@@ -40,7 +43,20 @@ export const usersReducer = function(state = initialUserState, action) {
     }        
 }
 
+// actions
+const USER_LIST_SUCCESS = 'USER_LIST_SUCCESS',
+    ADD_USER = 'ADD_USER',
+    DELETE_USER = 'DELETE_USER',
+    UPDATE_MESSAGE = 'UPDATE_MESSAGE';
+
 // action creators
+export function updateMessage() {
+    return {
+        type: UPDATE_MESSAGE,
+        message: 'hey test'
+    }
+}
+
 export function addUser(user) {
     return {
       type: ADD_USER
@@ -60,48 +76,32 @@ export function deleteUserSuccess(userId) {
       userId
     };
 }
-  
-// store.dispatch({
-//     type: 'ADD_USER',
-//     user: { name: 'Julia' }
-// });
-// console.log(store, store.getState()); 
 
 export class UsersList extends Component {
-
     componentDidMount() {
-        //userApi.getUsers();
-       
         axios.get('https://jsonplaceholder.typicode.com/users')
            .then(response => {
-               //console.log(store);
-               store.dispatch(getUsersSuccess(response.data));
-               console.log(response)
-               return response;
+              store.dispatch(getUsersSuccess(response.data));
             });
-             
-    }
 
-    // deleteUser: function(userId) {
-    //     store.dispatch(...);
-    // }
+        //    
+        //store.dispatch(updateMessage());
+    }
     
     render() {
-        let { users } = this.props; 
+        let { users, message } = this.props; 
         if (users === undefined) {
-            users = []
+            users = [];
         }
-        users = users || []
-        //console.log('Users', users);
+        users = users || [];
+        console.log(users);
 
         return (
             <div className="users-list">
-                <h2>Users</h2>
-
-                {/* <UserList users={this.props.users} deleteUser={this.deleteUser} /> */}
-
+                <h1>Users</h1>
+                {message}
                 <ul>
-                    {users.users.map((user, index) =>
+                    {users.map((user, index) =>
                          <li key={index}>{user.name}</li>
                      )}
                 </ul>
@@ -110,19 +110,27 @@ export class UsersList extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    users: state.usersState
-});
+const mapStateToProps = function(store) {
+    return {
+      users: store.usersState.users
+    };
+}
+// const mapStateToProps = state => ({
+//     users: state.usersState
+// });
 
-// const mapDispatchToProps = function(dispatch, ownProps) {
-//     return {
-//       toggleActive: function() {
-//         dispatch({ ... });
-//       }
-//     }
+
+// render value of state to DOM
+// let countTarget = document.getElementById('root');
+// function render() {
+//   countTarget.innerHTML = store.getState();
 // }
+// subscribe to render
+//store.subscribe(render);
+
+//dispatch an action (update message after 5 seconds)
+// setTimeout( () => {
+//   store.dispatch(updateMessage())
+// }, 5000);
   
-export default connect(
-    mapStateToProps
-    //mapDispatchToProps
-)(UsersList);
+export default connect(mapStateToProps)(UsersList);

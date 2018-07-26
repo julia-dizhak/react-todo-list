@@ -15,8 +15,7 @@ export default function CounterPresenter(props) {
                     onClick={onIncrement}
                     label="example 1"
                     operation="+" 
-                    operand={1000}
-                >
+                    operand={1000}>
                 increment 
                 </Button>        
             </div>  
@@ -26,8 +25,7 @@ export default function CounterPresenter(props) {
                     onClick={onDecrement} 
                     label="example 2"
                     operation="-"
-                    operand={5}
-                >
+                    operand={5}>
                 decrement
                 </Button>
             </div>        
