@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 
 import TodoContainer from './components/todo/TodoContainer';
 import { todoReducer } from './components/todo/TodoContainer';
-import { TODO_ADD } from './components/todo/TodoContainer';
+import { TODO_ADD, TODO_TOGGLE, doAddTodo, doToggleTodo } from './components/todo/TodoContainer';
 
 import ItemListContainer from './components/list/ItemListContainer';
 
@@ -47,12 +47,23 @@ const unsubscribe = store.subscribe(() => {
 
 store.dispatch({
     type: TODO_ADD,
-    todo: { id: '0', name: 'learn redux', completed: false },
+    todo: { id: '0', name: 'learn React'}
 });
 store.dispatch({
     type: TODO_ADD,
-    todo: { id: '1', name: 'learn react', completed: false },
+    todo: { id: '1', name: 'learn Redux'}
 });
+store.dispatch({
+    type: TODO_ADD,
+    todo: { id: '2', name: 'learn Mobx'}
+});
+store.dispatch({
+    type: TODO_TOGGLE,
+    todo: { id: '0' },
+});
+store.dispatch(doAddTodo('3', 'learn smth'));
+store.dispatch(doToggleTodo('1'));
+  
 unsubscribe();
 
 ReactDOM.render(
@@ -73,5 +84,3 @@ registerServiceWorker();
 if (module.hot) {
     module.hot.accept();
 }
-
-export { store }

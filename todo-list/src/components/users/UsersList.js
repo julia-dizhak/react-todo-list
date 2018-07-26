@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import filter from 'lodash/filter';
-import { store } from './../../index';
-
 
 const initialState = {
     users: [
@@ -78,14 +76,11 @@ export function deleteUserSuccess(userId) {
 }
 
 export class UsersList extends Component {
-    componentDidMount() {
+    componentDidMount(state) {
         axios.get('https://jsonplaceholder.typicode.com/users')
            .then(response => {
-              store.dispatch(getUsersSuccess(response.data));
+              state.dispatch(getUsersSuccess(response.data));
             });
-
-        //    
-        //store.dispatch(updateMessage());
     }
     
     render() {
@@ -110,23 +105,14 @@ export class UsersList extends Component {
     }
 }
 
-const mapStateToProps = function(store) {
+const mapStateToProps = function(state) {
     return {
-      users: store.usersState.users
+      users: state.usersState.users
     };
 }
 // const mapStateToProps = state => ({
 //     users: state.usersState
 // });
-
-
-// render value of state to DOM
-// let countTarget = document.getElementById('root');
-// function render() {
-//   countTarget.innerHTML = store.getState();
-// }
-// subscribe to render
-//store.subscribe(render);
 
 //dispatch an action (update message after 5 seconds)
 // setTimeout( () => {

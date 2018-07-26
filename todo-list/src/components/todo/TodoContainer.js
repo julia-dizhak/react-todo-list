@@ -7,18 +7,30 @@ import Menu from './../menu/Menu';
 
 export const TODO_ADD = 'TODO_ADD';
 export const TODO_TOGGLE = 'TODO_TOOGLE';
-// {
-//     type: 'TODO_ADD',
-//     todo: { id: '0', name: 'learn redux', completed: false }
-// }
-//
-// {
-//     type: 'TODO_TOGGLE',
-//     todo: { id: '0' }
-// }
 
 // actions creators
-function applyAddTodo(state, action) {
+export function doAddTodo(id, name) { 
+    return {
+        type: TODO_ADD,
+        todo: { id, name }
+    };
+}
+export function doToggleTodo(id) { 
+    return {
+        type: TODO_TOGGLE,
+        todo: { id }
+  };
+}
+
+export function doToggleLoginModal(open) { 
+    return {
+        type: 'LOGIN_MODAL_TOGGLE',
+        isLoginModalOpen: open
+    };
+}
+
+// reducers
+export function applyAddTodo(state, action) {
     const todo = Object.assign(
         {}, 
         action.todo, 
@@ -43,13 +55,13 @@ const initialState = [];
 // define a reducer
 export function todoReducer(state = initialState, action) {
     switch (action.type) {
-        case TODO_ADD: {
+        case TODO_ADD : {
             return applyAddTodo(state, action);
         }
-        case TODO_TOGGLE: {
+        case TODO_TOGGLE : {
             return applyToggleTodo(state, action);
         }
-        default: 
+        default : 
             return state;
     }
 }
