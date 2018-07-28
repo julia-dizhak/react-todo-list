@@ -6,15 +6,15 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import TodoContainer from './components/todo/TodoContainer';
-import { todoReducer } from './components/todo/TodoContainer';
-import { TODO_ADD, TODO_TOGGLE, doAddTodo, doToggleTodo } from './components/todo/TodoContainer';
+import { todoReducer, filterReducer } from './components/todo/TodoContainer';
+import { TODO_ADD, TODO_TOGGLE, doAddTodo, doToggleTodo, doSetFilter } from './components/todo/TodoContainer';
 
 import ItemListContainer from './components/list/ItemListContainer';
 
 import { usersReducer, UsersList } from './components/users/UsersList';
 
-import CounterContainer from './components/counter/';
-import { counterReducer } from './components/counter/';
+import CounterContainer from './components/counter';
+import { counterReducer } from './components/counter';
 
 import productReducer from './store/reducers/products';
 
@@ -24,7 +24,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const reducers = combineReducers({
     todoState: todoReducer,
-
+    filterState: filterReducer,
 
     usersState: usersReducer,
     counterState: counterReducer,
@@ -39,13 +39,13 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log('initial state:');
-console.log(store.getState());
+// console.log('initial state:');
+// console.log(store.getState());
 
-const unsubscribe = store.subscribe(() => {
-  console.log('store update, current state:');
-  console.log(store.getState());
-});
+// const unsubscribe = store.subscribe(() => {
+//   console.log('store update, current state:');
+//   console.log(store.getState());
+// });
 
 store.dispatch({
     type: TODO_ADD,
@@ -65,8 +65,8 @@ store.dispatch({
 });
 store.dispatch(doAddTodo('3', 'learn smth'));
 store.dispatch(doToggleTodo('1'));
-  
-unsubscribe();
+store.dispatch(doSetFilter('COMPLETED'));
+// unsubscribe();
 
 ReactDOM.render(
     <Provider store={store}> 

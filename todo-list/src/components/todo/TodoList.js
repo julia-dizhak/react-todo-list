@@ -1,49 +1,20 @@
-import React, { Component } from 'react';
-import TodoItems from './TodoItems';
+import React from 'react';
 
-export default class TodoList extends Component {
-  state = {
-    items: []
-  }
+export default function TodoList(props) {
+    const { todoEntries, title } = props;
+   
+    function createTasks(item) {
+        return <li key={item.key}>{item.text}</li>
+    }
 
-  addItem = (event) => {
-    let itemArray = this.state.items;
+    let listItems = todoEntries.map(createTasks);
 
-    itemArray.push({
-      text: this._inputElement.value,
-      key: Date.now()
-    });
-
-    this.setState({ items: itemArray });
-
-    this._inputElement.value = '';
-
-    event.preventDefault();
-  }
-
-  render() {
     return (
-      <div className="todo-list">
-        <div>
-            <h1>Todo List</h1>
-
-            <form 
-                className="todo-form" 
-                onSubmit={this.addItem}>
-
-                <input 
-                    ref={(a) => this._inputElement = a}
-                    placeholder="enter task" 
-                />
-                
-                <button type="submit">add</button>
-            </form>
-        </div>
-
-        <TodoItems                  
-            entries={this.state.items} 
-        />
-        </div>
+        <div className="todo-list">
+            <h2>{title}</h2>
+            <ul className="list">
+                {listItems}
+            </ul>
+        </div>       
     );
-  }
 }

@@ -2,7 +2,7 @@ import {
     FETCH_PRODUCTS_BEGIN,
     FETCH_PRODUCTS_SUCCESS,
     FETCH_PRODUCTS_ERROR
-} from './../actions/products';
+} from '../actions/products';
   
 const initialState = {
     items: [],

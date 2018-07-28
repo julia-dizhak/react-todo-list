@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { incrementCounter, decrementCounter } from './index'; 
+import { incrementCounter, decrementCounter } from '.'; 
 
 export class Button extends Component {
     state = {

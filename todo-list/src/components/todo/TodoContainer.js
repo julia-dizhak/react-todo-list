@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './../../style.css';
 
-import TodoList from './TodoList';
-import MenuButton from './../menu/MenuButton';
-import Menu from './../menu/Menu';
+import TodoListContainer from './TodoListContainer';
+import MenuButton from '../menu/MenuButton';
+import Menu from '../menu/Menu';
 
 export const TODO_ADD = 'TODO_ADD';
 export const TODO_TOGGLE = 'TODO_TOOGLE';
+export const FILTER_SET = 'FILTER_SET';
 
 // actions creators
 export function doAddTodo(id, name) { 
@@ -15,6 +16,7 @@ export function doAddTodo(id, name) {
         todo: { id, name }
     };
 }
+
 export function doToggleTodo(id) { 
     return {
         type: TODO_TOGGLE,
@@ -26,6 +28,13 @@ export function doToggleLoginModal(open) {
     return {
         type: 'LOGIN_MODAL_TOGGLE',
         isLoginModalOpen: open
+    };
+}
+
+export function doSetFilter(filter) { 
+    return {
+        type: FILTER_SET,
+        filter
     };
 }
 
@@ -78,6 +87,19 @@ export function applyToggleTodo(state, action) {
     return Object.assign({}, state, { todos });
 }
 
+export function filterReducer(state = 'SHOW_ALL', action) { 
+    switch(action.type) {
+        case FILTER_SET: {
+            return applySetFilter(state, action);
+        }
+        default: return state;
+    }
+}
+
+function applySetFilter(state, action) { 
+    return action.filter;
+}
+
 export default class TodoContainer extends Component {
   state = {
     visible: false
@@ -96,7 +118,8 @@ export default class TodoContainer extends Component {
                 visibleState={this.state.visible}
                 handleMouseDown={this.handleMouseDown} 
             />
-            <TodoList />
+            
+            <TodoListContainer />
         </React.Fragment>
     );
   }

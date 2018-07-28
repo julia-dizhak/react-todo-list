@@ -13,6 +13,9 @@ h1 {
   text-align: center;
 }
 
+.todo-container {
+    text-align: center;
+}
 .todo-form {
   width: 50%;
   margin: 0 auto 15px;
@@ -37,7 +40,7 @@ h1 {
   cursor: pointer;
 }
 
-.todo {
+.todo-list .list {
   list-style: none;
   padding-left: 0;
   width: 50%;
@@ -45,7 +48,7 @@ h1 {
   text-align: center;
 }
  
-.todo li {
+.todo-list .list li {
   color: #333;
   background-color: rgba(255,255,255,.5);
   padding: 15px;
