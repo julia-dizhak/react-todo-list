@@ -1,5 +1,5 @@
 # Todo-list
-creating todo list by React. 
+creating todo list by React, 
 [Demo todo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/)
 
 In addition:

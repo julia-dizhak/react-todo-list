@@ -20,8 +20,6 @@ import productReducer from './store/reducers/products';
 
 import { favoriteColorsReducer } from './components/FavouriteColors';
 
-import registerServiceWorker from './registerServiceWorker';
-
 const reducers = combineReducers({
     todoState: todoReducer,
     filterState: filterReducer,
@@ -79,8 +77,8 @@ ReactDOM.render(
             </React.Fragment>
         </Router>
     </Provider>,
-    document.getElementById('root'));
-registerServiceWorker();
+    document.getElementById('root')
+);
 
 // browser shouldn’tperform a page refresh, but the application reloads and shows the correct output
 if (module.hot) {
