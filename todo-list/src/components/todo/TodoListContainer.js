@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import TodoList from './TodoList';
-const API_URL = 'https://documents-de4ba.firebaseio.com/documents.json';
+const API_URL = 'https://documents-de4ba.firebaseio.com/todos.json';
 
 
 export default class TodoListContainer extends Component {
@@ -14,19 +14,22 @@ export default class TodoListContainer extends Component {
             disabled: false
         }
 
-        this.saveTodo = this.saveTodo.bind(this);
+        //this.saveTodo = this.saveTodo.bind(this);
 
         this.handleAddTodo = this.handleAddTodo.bind(this);
         this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
     }
 
     componentDidMount() {
-        const response = await fetch(API_URL);
-        const json = await response.json();
-        debugger;
+       fetch(API_URL).then(async (response) => {
+            console.log(response);
+            response.json().then( async data => {
+                console.log(data);
+                this.setState({ todos: data })
+            })
+        });
     }
-    
-    
+
     handleAddTodo(event) {
         if ( this.inputElement.value !== '') {
             let newItem = {

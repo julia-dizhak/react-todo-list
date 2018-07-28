@@ -10,6 +10,11 @@ const config = {
         path: OUTPUT,
         filename: "myCode.js"
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            fetch: "imports?this=>global!exports?global.fetch!whatwg-fetch"
+        })
+    ],
     module: {
         loaders: [{
             include: DEV,

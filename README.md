@@ -15,6 +15,8 @@ In addition:
 * styling
 
 ## Todo for Todo-list app:
+* loading
+* catch error
 * migrate to state and show how many tasks now in DisplayCounter
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils

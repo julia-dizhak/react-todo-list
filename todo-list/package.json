@@ -29,12 +29,14 @@
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      "stage-3"
     ],
     "plugins": [
       "syntax-dynamic-import",
       "transfrom-class-properties",
-      "transfrom-object-rest-spread"
+      "transfrom-object-rest-spread",
+      "transform-async-to-generator"
     ]
   },
   "scripts": {
