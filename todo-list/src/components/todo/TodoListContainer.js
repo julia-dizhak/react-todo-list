@@ -12,6 +12,7 @@ export default class TodoListContainer extends Component {
         }
 
         this.handleAddItem = this.handleAddItem.bind(this);
+        this.handleDeleteItem = this.handleDeleteItem.bind(this);
     }
     
     handleAddItem(event) {
@@ -36,6 +37,13 @@ export default class TodoListContainer extends Component {
         event.preventDefault();
     }
 
+    handleDeleteItem(key) {
+        const filteredItems = this.state.items.filter(function(item) {
+            return (item.key !== key)
+        });
+        this.setState({items: filteredItems});
+    }
+
     render() {
         const { messageEmptyTodoDisplay } = this.state;
 
@@ -57,6 +65,7 @@ export default class TodoListContainer extends Component {
                 <TodoList  
                     title={'Todo list'}                
                     todoEntries={this.state.items} 
+                    handleDeleteItem={this.handleDeleteItem}
                 />
             </div>
         );
