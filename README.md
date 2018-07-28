@@ -1,18 +1,18 @@
 # Todo-list
 creating todo list by React, 
-[Demo todo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/)
+[todo demo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/)
 
 In addition:
 [Counter todo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/counter)
 ...
 
 ## Todo App functionality
-* Displaying todo itmes;
-* Adding todo items on the submit;
-* Check if todo is empty and display error message;
-* Removing items;
-* Animating items as they are added or removed;
-* Styling
+* displaying todo itmes
+* adding todo items on the submit
+* check if todo is empty and display error message
+* removing items
+* animating items as they are added or removed
+* styling
 
 ## Todo for Todo-list app:
 * migrate to state and show how many tasks now in DisplayCounter

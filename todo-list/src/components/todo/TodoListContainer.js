@@ -1,22 +1,33 @@
 import React, { Component } from 'react';
 
 import TodoList from './TodoList';
+const API_URL = 'https://documents-de4ba.firebaseio.com/documents.json';
+
 
 export default class TodoListContainer extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            items: [],
+            todos: [],
             messageEmptyTodoDisplay: false,
             disabled: false
         }
 
-        this.handleAddItem = this.handleAddItem.bind(this);
-        this.handleDeleteItem = this.handleDeleteItem.bind(this);
+        this.saveTodo = this.saveTodo.bind(this);
+
+        this.handleAddTodo = this.handleAddTodo.bind(this);
+        this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
+    }
+
+    componentDidMount() {
+        const response = await fetch(API_URL);
+        const json = await response.json();
+        debugger;
     }
     
-    handleAddItem(event) {
+    
+    handleAddTodo(event) {
         if ( this.inputElement.value !== '') {
             let newItem = {
                 text: this.inputElement.value,
@@ -25,7 +36,7 @@ export default class TodoListContainer extends Component {
 
             this.setState((prevState) => {
                 return {
-                    items: prevState.items.concat(newItem),
+                    todos: prevState.todos.concat(newItem),
                     messageEmptyTodoDisplay: false,
                     //disabled: false
                 }
@@ -42,11 +53,11 @@ export default class TodoListContainer extends Component {
         event.preventDefault();
     }
 
-    handleDeleteItem(key) {
-        const filteredItems = this.state.items.filter(function(item) {
+    handleDeleteTodo(key) {
+        const filteredTodos = this.state.todos.filter(function(item) {
             return (item.key !== key)
         });
-        this.setState({items: filteredItems});
+        this.setState({todos: filteredTodos});
     }
 
     render() {
@@ -57,7 +68,7 @@ export default class TodoListContainer extends Component {
                 <div className="todo-form-container">
                     <form 
                         className="todo-form" 
-                        onSubmit={this.handleAddItem}>
+                        onSubmit={this.handleAddTodo}>
                         <input 
                             ref={(a) => this.inputElement = a}
                             placeholder="please enter a todo" 
@@ -75,8 +86,8 @@ export default class TodoListContainer extends Component {
 
                 <TodoList  
                     title={'Todo list'}                
-                    todoEntries={this.state.items} 
-                    handleDeleteItem={this.handleDeleteItem}
+                    todoEntries={this.state.todos} 
+                    handleDeleteTodo={this.handleDeleteTodo}
                 />
             </div>
         );

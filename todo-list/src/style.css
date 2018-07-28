@@ -60,7 +60,6 @@ h1 {
   margin-bottom: 15px;
   border-radius: 5px;
   text-align: left;
-
   transition: background-color 0.35s ease-out;
 }
 .todo-list .list li:hover {
