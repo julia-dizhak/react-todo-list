@@ -27,6 +27,7 @@ In addition:
 * desc ...
 
 ## Technologies
+*  animation by FlipMove
 
 ### Menu by react-motion
 * animating property value changes;
