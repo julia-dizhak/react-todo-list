@@ -1,4 +1,5 @@
 import React from 'react';
+import FlipMove from "react-flip-move";
 
 export default function TodoList(props) {
     const { todoEntries, title, handleDeleteItem } = props;
@@ -20,7 +21,9 @@ export default function TodoList(props) {
         <div className="todo-list">
             <h2>{ title }</h2>
             <ul className="list">
-                { listItems }
+                <FlipMove duration={250} easing="ease-out">
+                    { listItems }
+                </FlipMove>
             </ul>
         </div>       
     );

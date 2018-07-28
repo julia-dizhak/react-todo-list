@@ -10,12 +10,11 @@ In addition:
 * Displaying todo itmes;
 * Adding todo items on the submit;
 * Check if todo is empty and display error message;
-* Removing items
+* Removing items;
+* Animating items as they are added or removed;
 * Styling
 
-## Todo for Todo-list:
-
-* Animating items as they are added or removed
+## Todo for Todo-list app:
 * migrate to state and show how many tasks now in DisplayCounter
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils
