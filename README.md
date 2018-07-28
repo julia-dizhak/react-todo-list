@@ -6,15 +6,15 @@ In addition:
 [Counter todo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/counter)
 ...
 
-## Todo list desc
-* initial state;
-* handle the submit;
-* populate state;
-* display tasks;
-* add finish touches;
+## Todo App functionality
+* Displaying todo itmes;
+* Adding todo items on the submit;
+* Check if todo is empty and display error message;
+* Styling
 
 ## Todo for Todo-list:
-* don't push empty task in todo
+* Removing items
+* Animating items as they are added or removed
 * migrate to state and show how many tasks now in DisplayCounter
 * new challenge: operation +, -, ... (add multiple, division)
 * move file to utils

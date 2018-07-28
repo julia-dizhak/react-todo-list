@@ -21,6 +21,10 @@ h1 {
   margin: 0 auto 15px;
   text-align: center;
 }
+.todo-form .error {
+    color: red;
+    font-size: 14px;
+}
 .todo-form input {
   padding: 10px;
   font-size: 16px;
@@ -33,6 +37,7 @@ h1 {
   background-color: #0066FF;
   color: #FFF;
   border: 2px solid #0066FF;
+  border-radius: 4px;
 }
 .todo-form button:hover {
   background-color: #003399;

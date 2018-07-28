@@ -7,7 +7,8 @@ export default class TodoListContainer extends Component {
         super(props);
 
         this.state = {
-            items: []
+            items: [],
+            messageEmptyTodoDisplay: false
         }
 
         this.handleAddItem = this.handleAddItem.bind(this);
@@ -22,19 +23,22 @@ export default class TodoListContainer extends Component {
 
             this.setState((prevState) => {
                 return {
-                    items: prevState.items.concat(newItem)
+                    items: prevState.items.concat(newItem),
+                    messageEmptyTodoDisplay: false
                 }
             });
 
             this.inputElement.value = '';
         } else {
-            //debugger;
+            this.setState({messageEmptyTodoDisplay: true});
         }
     
         event.preventDefault();
     }
 
     render() {
+        const { messageEmptyTodoDisplay } = this.state;
+
         return (
             <div className="todo-container">
                 <div className="todo-form-container">
@@ -46,7 +50,7 @@ export default class TodoListContainer extends Component {
                             placeholder="please enter a todo" 
                         />
                         <button type="submit">add todo</button>
-                        {/* <div></div> */}
+                        {messageEmptyTodoDisplay && <div className="error">Please provide a todo description</div>}
                     </form>
                 </div>
 
