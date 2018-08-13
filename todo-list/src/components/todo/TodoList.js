@@ -2,14 +2,13 @@ import React from 'react';
 import FlipMove from "react-flip-move";
 
 export default function TodoList(props) {
-    const { todoEntries, title, handleDeleteTodo } = props;
+    const {todoEntries, title, handleDeleteTodo} = props;
    
     function createTasks(item) {
         return (
             <li 
                 key={item.key}
-                onClick={() => handleDeleteTodo(item.key)}
-            >
+                onClick={() => handleDeleteTodo(item.key)}>
                 {item.text}
             </li>
         )
@@ -19,10 +18,10 @@ export default function TodoList(props) {
 
     return (
         <div className="todo-list">
-            <h2>{ title }</h2>
+            <h2>{title}</h2>
             <ul className="list">
                 <FlipMove duration={250} easing="ease-out">
-                    { todos }
+                    {todos}
                 </FlipMove>
             </ul>
         </div>       

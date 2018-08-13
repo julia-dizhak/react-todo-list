@@ -7,6 +7,8 @@ In addition:
 ...
 
 ## Todo App functionality
+* correct deploy on github pages
+* check deepcode https://www.deepcode.ai/app/gh/julia-dizhak/react-blog-posts/4dc7a5c701378274d0f4e5a2f68795771d80b614/_/javascript%2Feslint%2Fno-unused-vars/dashboard/
 * displaying todo itmes
 * adding todo items on the submit
 * check if todo is empty and display error message
@@ -15,7 +17,9 @@ In addition:
 * styling
 
 ## Todo for Todo-list app:
-* loading
+* concat instead shift or object assign?
+* loading when js, https://jsonplaceholder.typicode.com/todos
+* ask about deploy
 * catch error
 * migrate to state and show how many tasks now in DisplayCounter
 * new challenge: operation +, -, ... (add multiple, division)

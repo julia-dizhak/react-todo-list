@@ -22,15 +22,14 @@ export default class TodoListContainer extends Component {
 
     componentDidMount() {
        fetch(API_URL).then(async (response) => {
-            console.log(response);
             response.json().then( async data => {
-                console.log(data);
                 this.setState({ todos: data })
             })
         });
     }
 
     handleAddTodo(event) {
+        debugger;
         if ( this.inputElement.value !== '') {
             let newItem = {
                 text: this.inputElement.value,
@@ -79,10 +78,10 @@ export default class TodoListContainer extends Component {
 
                         <button 
                             type="submit"
-                            disabled={disabled}
-                        >
+                            disabled={disabled}>
                             add todo
                         </button>
+                        
                         {messageEmptyTodoDisplay && <div className="error">Please provide a todo description</div>}
                     </form>
                 </div>
