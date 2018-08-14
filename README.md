@@ -1,6 +1,6 @@
 # Todo-list
 creating todo list by React, 
-[todo demo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/)
+[todo demo](https://julia-dizhak.github.io/react-todo-list/)
 
 In addition:
 [Counter todo](https://julia-dizhak.github.io/react-todo-list/todo-list/demo/counter)

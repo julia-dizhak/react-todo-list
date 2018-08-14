@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
@@ -66,17 +66,32 @@ store.dispatch(doToggleTodo('1'));
 store.dispatch(doSetFilter('COMPLETED'));
 // unsubscribe();
 
+export default class Test extends Component {
+    state = {
+      test: 'test'
+    }
+
+    render() {
+      return (
+          <React.Fragment>
+              {this.state.test}
+          </React.Fragment>
+      );
+    }
+  }
+
 ReactDOM.render(
-    <Provider store={store}> 
-        <Router>
-            <React.Fragment>
-                <Route exact path="/" component={TodoContainer} />
-                <Route exact path="/users-list" component={UsersList} />
-                <Route exact path="/counter" component={CounterContainer} />
-                <Route exact path="/list" component={ItemListContainer} />
-            </React.Fragment>
-        </Router>
-    </Provider>,
+    // <Provider store={store}> 
+    //     <Router>
+    //         <React.Fragment>
+    //             <Route exact path="/" component={TodoContainer} />
+    //             <Route exact path="/users-list" component={UsersList} />
+    //             <Route exact path="/counter" component={CounterContainer} />
+    //             <Route exact path="/list" component={ItemListContainer} />
+    //         </React.Fragment>
+    //     </Router>
+    // </Provider>,
+    <Test />,
     document.getElementById('root')
 );
 
