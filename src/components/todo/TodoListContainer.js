@@ -29,7 +29,6 @@ export default class TodoListContainer extends Component {
     }
 
     handleAddTodo(event) {
-        debugger;
         if ( this.inputElement.value !== '') {
             let newItem = {
                 text: this.inputElement.value,
