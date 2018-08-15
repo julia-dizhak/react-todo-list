@@ -69,17 +69,24 @@ store.dispatch(doToggleTodo('1'));
 store.dispatch(doSetFilter('COMPLETED'));
 // unsubscribe();
 
+// with provider
+// ReactDOM.render(
+//     <Provider store={store}> 
+//         <BrowserRouter history={history}>
+//             <Switch>
+//                 <Route exact path="/" component={TodoContainer} />
+//                 <Route path="/users-list" component={UsersList} />
+//                 <Route path="/counter" component={CounterContainer} />
+//                 <Route path="/list" component={ItemListContainer} />
+//             </Switch>
+//         </BrowserRouter>
+//     </Provider>,
+//     document.getElementById('root')
+// );
+
+// without
 ReactDOM.render(
-    <Provider store={store}> 
-        <BrowserRouter history={history}>
-            <Switch>
-                <Route exact path="/" component={TodoContainer} />
-                <Route path="/users-list" component={UsersList} />
-                <Route path="/counter" component={CounterContainer} />
-                <Route path="/list" component={ItemListContainer} />
-            </Switch>
-        </BrowserRouter>
-    </Provider>,
+    <TodoContainer />,
     document.getElementById('root')
 );
 
