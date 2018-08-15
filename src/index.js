@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import createHistory from 'history/createBrowserHistory';
 
 import TodoContainer from './components/todo/TodoContainer';
 import { todoReducer, filterReducer } from './components/todo/TodoContainer';
@@ -19,6 +20,8 @@ import { counterReducer } from './components/counter';
 import productReducer from './store/reducers/products';
 
 import { favoriteColorsReducer } from './components/FavouriteColors';
+
+const history = createHistory();
 
 const reducers = combineReducers({
     todoState: todoReducer,
@@ -66,32 +69,17 @@ store.dispatch(doToggleTodo('1'));
 store.dispatch(doSetFilter('COMPLETED'));
 // unsubscribe();
 
-export default class Test extends Component {
-    state = {
-      test: 'test'
-    }
-
-    render() {
-      return (
-          <React.Fragment>
-              {this.state.test}
-          </React.Fragment>
-      );
-    }
-  }
-
 ReactDOM.render(
-    // <Provider store={store}> 
-    //     <Router>
-    //         <React.Fragment>
-    //             <Route exact path="/" component={TodoContainer} />
-    //             <Route exact path="/users-list" component={UsersList} />
-    //             <Route exact path="/counter" component={CounterContainer} />
-    //             <Route exact path="/list" component={ItemListContainer} />
-    //         </React.Fragment>
-    //     </Router>
-    // </Provider>,
-    <Test />,
+    <Provider store={store}> 
+        <BrowserRouter history={history}>
+            <Switch>
+                <Route exact path="/" component={TodoContainer} />
+                <Route path="/users-list" component={UsersList} />
+                <Route path="/counter" component={CounterContainer} />
+                <Route path="/list" component={ItemListContainer} />
+            </Switch>
+        </BrowserRouter>
+    </Provider>,
     document.getElementById('root')
 );
 
