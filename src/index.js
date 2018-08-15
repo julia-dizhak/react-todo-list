@@ -84,7 +84,7 @@ store.dispatch(doSetFilter('COMPLETED'));
 //     document.getElementById('root')
 // );
 
-// without
+// without provider
 ReactDOM.render(
     <TodoContainer />,
     document.getElementById('root')
